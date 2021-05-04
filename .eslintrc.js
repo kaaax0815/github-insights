@@ -8,6 +8,7 @@ module.exports = {
   env: {
     node: true
   },
+  ignorePatterns: ['**/docs/**'],
   plugins: ['simple-import-sort', '@typescript-eslint', 'prettier'],
   extends: [
     'eslint:recommended',
