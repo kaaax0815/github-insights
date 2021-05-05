@@ -16,7 +16,7 @@ class Traffic {
     })
       .then((value) => validateResponseAndJSON(value))
       .catch((err) => {
-        throw new Error(err);
+        throw new Error(err.message ? err.message : err);
       });
   }
   /**
@@ -38,7 +38,7 @@ class Traffic {
     })
       .then((value) => validateResponseAndJSON(value))
       .catch((err) => {
-        throw new Error(err);
+        throw new Error(err.message ? err.message : err);
       });
   }
   /**
@@ -60,7 +60,7 @@ class Traffic {
     })
       .then((value) => validateResponseAndJSON(value))
       .catch((err) => {
-        throw new Error(err);
+        throw new Error(err.message ? err.message : err);
       });
   }
   /**
@@ -77,7 +77,7 @@ class Traffic {
     })
       .then((value) => validateResponseAndJSON(value))
       .catch((err) => {
-        throw new Error(err);
+        throw new Error(err.message ? err.message : err);
       });
   }
 }
@@ -89,7 +89,7 @@ async function Repos(user: string): Promise<ReposType[]> {
   return fetch(`https://api.github.com/users/${user}/repos?page=1&type=all&per_page=100`)
     .then((value) => validateResponseAndJSON(value))
     .catch((err) => {
-      throw new Error(err);
+      throw new Error(err.message ? err.message : err);
     });
 }
 
@@ -102,7 +102,7 @@ async function CommitActivity(user: string, repo: string): Promise<CommitActivit
   return fetch(`https://api.github.com/repos/${user}/${repo}/stats/commit_activity`)
     .then((value) => validateResponseAndJSON(value))
     .catch((err) => {
-      throw new Error(err);
+      throw new Error(err.message ? err.message : err);
     });
 }
 
@@ -115,13 +115,15 @@ async function PunchCard(user: string, repo: string): Promise<PunchCardType[]> {
   return fetch(`https://api.github.com/repos/${user}/${repo}/stats/punch_card`)
     .then((value) => validateResponseAndJSON(value))
     .catch((err) => {
-      throw new Error(err);
+      throw new Error(err.message ? err.message : err);
     });
 }
 
-function validateResponseAndJSON(value: Response) {
+async function validateResponseAndJSON(value: Response) {
   if (!value.ok) {
-    throw new Error('Not a valid response');
+    const json = await value.json();
+    // Check if Github Error Message exists
+    throw new Error(json.message ? json.message : "Could'nt get a valid response");
   }
   return value.json();
 }
@@ -274,7 +276,7 @@ export interface CommitActivityType {
   days: number[];
 }
 
-interface PunchCardType {
+export interface PunchCardType {
   /** 0-6: Sunday - Saturday */
   0: number;
   /** 0-23: Hour of day */
