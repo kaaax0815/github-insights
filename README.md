@@ -14,6 +14,11 @@ With YARN:
 yarn add github-insights
 ```
 
+## 📄 Documentation
+
+Documentation is available [here](https://kaaax0815.github.io/github-insights/)  
+The "API" Module is most Important, "INDEX" just exports it
+
 ## 📖 Example
 
 ```ts
