@@ -1,5 +1,5 @@
 import { encode } from 'base-64';
-import fetch from 'node-fetch';
+import fetch, { Response } from 'node-fetch';
 
 class Traffic {
   /**
@@ -14,8 +14,10 @@ class Traffic {
       method: 'GET',
       headers: { Authorization: 'Basic ' + encode(`${username}:${password}`) }
     })
-      .then((value) => value.json())
-      .catch((err) => Error(err));
+      .then((value) => validateResponseAndJSON(value))
+      .catch((err) => {
+        throw new Error(err);
+      });
   }
   /**
    * @param user - The User of "repo"
@@ -34,8 +36,10 @@ class Traffic {
       method: 'GET',
       headers: { Authorization: 'Basic ' + encode(`${username}:${password}`) }
     })
-      .then((value) => value.json())
-      .catch((err) => Error(err));
+      .then((value) => validateResponseAndJSON(value))
+      .catch((err) => {
+        throw new Error(err);
+      });
   }
   /**
    * @param user - The User of "repo"
@@ -54,8 +58,10 @@ class Traffic {
       method: 'GET',
       headers: { Authorization: 'Basic ' + encode(`${username}:${password}`) }
     })
-      .then((value) => value.json())
-      .catch((err) => Error(err));
+      .then((value) => validateResponseAndJSON(value))
+      .catch((err) => {
+        throw new Error(err);
+      });
   }
   /**
    * @param user - The User of "repo"
@@ -69,8 +75,10 @@ class Traffic {
       method: 'GET',
       headers: { Authorization: 'Basic ' + encode(`${username}:${password}`) }
     })
-      .then((value) => value.json())
-      .catch((err) => Error(err));
+      .then((value) => validateResponseAndJSON(value))
+      .catch((err) => {
+        throw new Error(err);
+      });
   }
 }
 /**
@@ -79,8 +87,10 @@ class Traffic {
  */
 async function Repos(user: string): Promise<ReposType[]> {
   return fetch(`https://api.github.com/users/${user}/repos?page=1&type=all&per_page=100`)
-    .then((value) => value.json())
-    .catch((err) => Error(err));
+    .then((value) => validateResponseAndJSON(value))
+    .catch((err) => {
+      throw new Error(err);
+    });
 }
 
 /**
@@ -90,8 +100,10 @@ async function Repos(user: string): Promise<ReposType[]> {
  */
 async function CommitActivity(user: string, repo: string): Promise<CommitActivityType[]> {
   return fetch(`https://api.github.com/repos/${user}/${repo}/stats/commit_activity`)
-    .then((value) => value.json())
-    .catch((err) => Error(err));
+    .then((value) => validateResponseAndJSON(value))
+    .catch((err) => {
+      throw new Error(err);
+    });
 }
 
 /**
@@ -101,8 +113,17 @@ async function CommitActivity(user: string, repo: string): Promise<CommitActivit
  */
 async function PunchCard(user: string, repo: string): Promise<PunchCardType[]> {
   return fetch(`https://api.github.com/repos/${user}/${repo}/stats/punch_card`)
-    .then((value) => value.json())
-    .catch((err) => Error(err));
+    .then((value) => validateResponseAndJSON(value))
+    .catch((err) => {
+      throw new Error(err);
+    });
+}
+
+function validateResponseAndJSON(value: Response) {
+  if (!value.ok) {
+    throw new Error('Not a valid response');
+  }
+  return value.json();
 }
 
 export { Traffic, Repos, CommitActivity, PunchCard };
