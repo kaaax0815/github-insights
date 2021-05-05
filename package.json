@@ -1,6 +1,6 @@
 {
   "name": "github-insights",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get Github Insights, but easy",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -44,11 +44,11 @@
     "access": "public"
   },
   "bugs": {
-    "url" : "https://github.com/kaaax0815/github-insights/issues"
+    "url": "https://github.com/kaaax0815/github-insights/issues"
   },
   "funding": {
-    "type" : "individual",
-    "url" : "https://www.buymeacoffee.com/kaaaxcreators"
+    "type": "individual",
+    "url": "https://www.buymeacoffee.com/kaaaxcreators"
   },
   "homepage": "https://kaaax0815.github.io/github-insights/"
 }
