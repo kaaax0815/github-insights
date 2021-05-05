@@ -80,6 +80,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/api.clonesentity.html" class="tsd-kind-icon">Clones<wbr>Entity</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/api.clonestype.html" class="tsd-kind-icon">Clones<wbr>Type</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/api.commitactivitytype.html" class="tsd-kind-icon">Commit<wbr>Activity<wbr>Type</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/api.license.html" class="tsd-kind-icon">License</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/api.owner.html" class="tsd-kind-icon">Owner</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/api.pathstype.html" class="tsd-kind-icon">Paths<wbr>Type</a></li>
@@ -92,6 +93,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="api.html#commitactivity" class="tsd-kind-icon">Commit<wbr>Activity</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="api.html#punchcard" class="tsd-kind-icon">Punch<wbr>Card</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="api.html#repos" class="tsd-kind-icon">Repos</a></li>
 							</ul>
 						</section>
@@ -100,6 +103,72 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="commitactivity" class="tsd-anchor"></a>
+					<h3>Commit<wbr>Activity</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Commit<wbr>Activity<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, repo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.commitactivitytype.html" class="tsd-signature-type" data-tsd-kind="Interface">CommitActivityType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L91">api.ts:91</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>user: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The User of &quot;repo&quot;</p>
+									</div>
+								</li>
+								<li>
+									<h5>repo: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the Repo</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.commitactivitytype.html" class="tsd-signature-type" data-tsd-kind="Interface">CommitActivityType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>the last year of commit activity grouped by week as JSON object</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="punchcard" class="tsd-anchor"></a>
+					<h3>Punch<wbr>Card</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">Punch<wbr>Card<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, repo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PunchCardType</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L102">api.ts:102</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>user: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The User of &quot;repo&quot;</p>
+									</div>
+								</li>
+								<li>
+									<h5>repo: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the Repo</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PunchCardType</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>the hourly commit count for each day as JSON object</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="repos" class="tsd-anchor"></a>
 					<h3>Repos</h3>
@@ -110,7 +179,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in api.ts:80</li>
+									<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L80">api.ts:80</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -123,7 +192,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/api.repostype.html" class="tsd-signature-type" data-tsd-kind="Interface">ReposType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>Repos as JSON Object</p>
+							<p>public repositories for the specified user as JSON object</p>
 						</li>
 					</ul>
 				</section>
@@ -139,7 +208,7 @@
 						<a href="api.html">api</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="index.html">index</a>
+						<a href="utils.html">utils</a>
 					</li>
 				</ul>
 			</nav>
@@ -153,6 +222,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/api.clonestype.html" class="tsd-kind-icon">Clones<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/api.commitactivitytype.html" class="tsd-kind-icon">Commit<wbr>Activity<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/api.license.html" class="tsd-kind-icon">License</a>
@@ -176,6 +248,12 @@
 						<a href="../interfaces/api.viewstype.html" class="tsd-kind-icon">Views<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="api.html#commitactivity" class="tsd-kind-icon">Commit<wbr>Activity</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="api.html#punchcard" class="tsd-kind-icon">Punch<wbr>Card</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="api.html#repos" class="tsd-kind-icon">Repos</a>
 					</li>
 				</ul>
@@ -188,7 +266,6 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 			</ul>
 			<ul class="tsd-legend">

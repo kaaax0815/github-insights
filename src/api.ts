@@ -3,11 +3,11 @@ import fetch from 'node-fetch';
 
 class Traffic {
   /**
-   * @param user - The User of Repo
+   * @param user - The User of "repo"
    * @param repo - The name of the Repo
    * @param repo - The Username with Push Access to "repo"
    * @param password - The Access Token of "username"
-   * @returns Clones as JSON Object
+   * @returns the total number of clones and breakdown per day for the last 14 days as JSON object
    */
   clones(user: string, repo: string, username: string, password: string): Promise<ClonesType> {
     return fetch(`https://api.github.com/repos/${user}/${repo}/traffic/clones`, {
@@ -18,13 +18,13 @@ class Traffic {
       .catch((err) => Error(err));
   }
   /**
-   * @param user - The User of Repo
+   * @param user - The User of "repo"
    * @param repo - The name of the Repo
    * @param repo - The Username with Push Access to "repo"
    * @param password - The Access Token of "username"
-   * @returns Popular Paths as JSON Object
+   * @returns top 10 popular contents over the last 14 days as JSON object
    */
-  popularpaths(
+  popularPaths(
     user: string,
     repo: string,
     username: string,
@@ -38,13 +38,13 @@ class Traffic {
       .catch((err) => Error(err));
   }
   /**
-   * @param user - The User of Repo
+   * @param user - The User of "repo"
    * @param repo - The name of the Repo
    * @param repo - The Username with Push Access to "repo"
    * @param password - The Access Token of "username"
-   * @returns Popular Referrers as JSON Object
+   * @returns the top 10 referrers over the last 14 days as JSON object
    */
-  popularreferrers(
+  popularReferrers(
     user: string,
     repo: string,
     username: string,
@@ -58,11 +58,11 @@ class Traffic {
       .catch((err) => Error(err));
   }
   /**
-   * @param user - The User of Repo
+   * @param user - The User of "repo"
    * @param repo - The name of the Repo
    * @param repo - The Username with Push Access to "repo"
    * @param password - The Access Token of "username"
-   * @returns Views as JSON Object
+   * @returns  total number of views and breakdown per day for the last 14 days as JSON object
    */
   views(user: string, repo: string, username: string, password: string): Promise<ViewsType> {
     return fetch(`https://api.github.com/repos/${user}/${repo}/traffic/views`, {
@@ -75,7 +75,7 @@ class Traffic {
 }
 /**
  * @param user - The User
- * @returns Repos as JSON Object
+ * @returns public repositories for the specified user as JSON object
  */
 async function Repos(user: string): Promise<ReposType[]> {
   return fetch(`https://api.github.com/users/${user}/repos?page=1&type=all&per_page=100`)
@@ -83,7 +83,29 @@ async function Repos(user: string): Promise<ReposType[]> {
     .catch((err) => Error(err));
 }
 
-export { Traffic, Repos };
+/**
+ * @param user - The User of "repo"
+ * @param repo - The name of the Repo
+ * @returns the last year of commit activity grouped by week as JSON object
+ */
+async function CommitActivity(user: string, repo: string): Promise<CommitActivityType[]> {
+  return fetch(`https://api.github.com/repos/${user}/${repo}/stats/commit_activity`)
+    .then((value) => value.json())
+    .catch((err) => Error(err));
+}
+
+/**
+ * @param user - The User of "repo"
+ * @param repo - The name of the Repo
+ * @returns the hourly commit count for each day as JSON object
+ */
+async function PunchCard(user: string, repo: string): Promise<PunchCardType[]> {
+  return fetch(`https://api.github.com/repos/${user}/${repo}/stats/punch_card`)
+    .then((value) => value.json())
+    .catch((err) => Error(err));
+}
+
+export { Traffic, Repos, CommitActivity, PunchCard };
 
 export interface ClonesType {
   count: number;
@@ -164,6 +186,7 @@ export interface ReposType {
   clone_url: string;
   svn_url: string;
   homepage?: string | null;
+  /** size in kb */
   size: number;
   stargazers_count: number;
   watchers_count: number;
@@ -221,4 +244,20 @@ export interface ViewsEntity {
   timestamp: string;
   count: number;
   uniques: number;
+}
+
+export interface CommitActivityType {
+  total: number;
+  week: number;
+  /** days array is a group of commits per day, starting on Sunday */
+  days: number[];
+}
+
+interface PunchCardType {
+  /** 0-6: Sunday - Saturday */
+  0: number;
+  /** 0-23: Hour of day */
+  1: number;
+  /** Number of commits */
+  2: number;
 }

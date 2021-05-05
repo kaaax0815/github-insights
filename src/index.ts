@@ -1,7 +1,13 @@
-import { Repos, Traffic } from './api';
+import { CommitActivity, PunchCard, Repos, Traffic } from './api';
+import { EpochToDate } from './utils';
 
+/** Api */
 const repos = Repos;
-
 const traffic = new Traffic();
+const commitActivity = CommitActivity;
+const punchCard = PunchCard;
 
-export { repos, traffic };
+/** Utils */
+const epochToDate = EpochToDate;
+
+export { repos, traffic, commitActivity, punchCard, epochToDate };

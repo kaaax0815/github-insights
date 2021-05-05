@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ViewsType | github-insights</title>
+	<title>CommitActivityType | github-insights</title>
 	<meta name="description" content="Documentation for github-insights">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -58,10 +58,10 @@
 					<a href="../modules/api.html">api</a>
 				</li>
 				<li>
-					<a href="api.viewstype.html">ViewsType</a>
+					<a href="api.commitactivitytype.html">CommitActivityType</a>
 				</li>
 			</ul>
-			<h1>Interface ViewsType</h1>
+			<h1>Interface CommitActivityType</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ViewsType</span>
+						<span class="target">CommitActivityType</span>
 					</li>
 				</ul>
 			</section>
@@ -83,9 +83,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.viewstype.html#count" class="tsd-kind-icon">count</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.viewstype.html#uniques" class="tsd-kind-icon">uniques</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.viewstype.html#views" class="tsd-kind-icon">views</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.commitactivitytype.html#days" class="tsd-kind-icon">days</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.commitactivitytype.html#total" class="tsd-kind-icon">total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.commitactivitytype.html#week" class="tsd-kind-icon">week</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,32 +94,37 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="count" class="tsd-anchor"></a>
-					<h3>count</h3>
-					<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="days" class="tsd-anchor"></a>
+					<h3>days</h3>
+					<div class="tsd-signature tsd-kind-icon">days<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L239">api.ts:239</a></li>
+							<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L253">api.ts:253</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>days array is a group of commits per day, starting on Sunday</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="total" class="tsd-anchor"></a>
+					<h3>total</h3>
+					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L250">api.ts:250</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="uniques" class="tsd-anchor"></a>
-					<h3>uniques</h3>
-					<div class="tsd-signature tsd-kind-icon">uniques<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="week" class="tsd-anchor"></a>
+					<h3>week</h3>
+					<div class="tsd-signature tsd-kind-icon">week<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L240">api.ts:240</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="views" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> views</h3>
-					<div class="tsd-signature tsd-kind-icon">views<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="api.viewsentity.html" class="tsd-signature-type" data-tsd-kind="Interface">ViewsEntity</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L241">api.ts:241</a></li>
+							<li>Defined in <a href="https://github.com/kaaax0815/github-insights/blob/87cdcee/src/api.ts#L251">api.ts:251</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -150,9 +155,24 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="api.clonestype.html" class="tsd-kind-icon">Clones<wbr>Type</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
 						<a href="api.commitactivitytype.html" class="tsd-kind-icon">Commit<wbr>Activity<wbr>Type</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="api.commitactivitytype.html#days" class="tsd-kind-icon">days</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="api.commitactivitytype.html#total" class="tsd-kind-icon">total</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="api.commitactivitytype.html#week" class="tsd-kind-icon">week</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="api.license.html" class="tsd-kind-icon">License</a>
 					</li>
@@ -171,24 +191,9 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="api.viewsentity.html" class="tsd-kind-icon">Views<wbr>Entity</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="api.viewstype.html" class="tsd-kind-icon">Views<wbr>Type</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api.viewstype.html#count" class="tsd-kind-icon">count</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api.viewstype.html#uniques" class="tsd-kind-icon">uniques</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api.viewstype.html#views" class="tsd-kind-icon">views</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="../modules/api.html#commitactivity" class="tsd-kind-icon">Commit<wbr>Activity</a>
 					</li>
