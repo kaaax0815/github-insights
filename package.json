@@ -21,7 +21,6 @@
   "devDependencies": {
     "@kaaaxcreators/config": "^1.1.0",
     "@types/base-64": "^1.0.0",
-    "@types/node": "^15.0.1",
     "@types/node-fetch": "^2.5.10",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
