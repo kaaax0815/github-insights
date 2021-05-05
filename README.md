@@ -22,10 +22,10 @@ The "API" Module is most Important, "INDEX" just exports it
 ## 📖 Example
 
 ```ts
-import { traffic } from 'github-insights';
+import * as insights from 'github-insights';
 
 async function main() {
-  const clones = traffic.clones('<user>', '<repo>', '<username>', '<password>');
+  const clones = insights.traffic.clones('<user>', '<repo>', '<username>', '<password>');
   console.log(clones);
 }
 
