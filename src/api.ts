@@ -119,13 +119,16 @@ async function PunchCard(user: string, repo: string): Promise<PunchCardType[]> {
     });
 }
 
-async function validateResponseAndJSON(value: Response) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function validateResponseAndJSON<T extends Record<string, any> = any>(
+  value: Response
+): Promise<T> {
   if (!value.ok) {
-    const json = await value.json();
+    const json = (await value.json()) as T;
     // Check if Github Error Message exists
     throw new Error(json.message ? json.message : "Could'nt get a valid response");
   }
-  return value.json();
+  return value.json() as Promise<T>;
 }
 
 export { Traffic, Repos, CommitActivity, PunchCard };
