@@ -1,3 +1,18 @@
+## [v1.1.4] - 2021-09-07
+
+[Release notes](https://github.com/kaaax0815/github-insights/releases/tag/v1.1.4) · [Compare](https://github.com/kaaax0815/github-insights/compare/v1.1.3...v1.1.4) · [Tag](https://github.com/kaaax0815/github-insights/tree/v1.1.4) · Archive ([zip](https://github.com/kaaax0815/github-insights/archive/v1.1.4.zip) · [tar.gz](https://github.com/kaaax0815/github-insights/archive/v1.1.4.tar.gz))
+
+### Bug fixes
+
+- [`c4a999c`](https://github.com/kaaax0815/github-insights/commit/c4a999c)  Fix Compiler Warnings
+
+### Dependency updates
+
+- [`3fea669`](https://github.com/kaaax0815/github-insights/commit/3fea669)  Bump node-fetch from 2.6.1 to 3.0.0
+- [`d2d3dff`](https://github.com/kaaax0815/github-insights/commit/d2d3dff)  Bump @types/node-fetch from 2.5.12 to 3.0.3
+- [`d5fab29`](https://github.com/kaaax0815/github-insights/commit/d5fab29)  Bump @typescript-eslint/eslint-plugin from 4.30.0 to 4.31.0
+- [`12479f6`](https://github.com/kaaax0815/github-insights/commit/12479f6)  Bump @typescript-eslint/parser from 4.30.0 to 4.31.0
+
 ## [v1.1.3] - 2021-08-30
 
 [Release notes](https://github.com/kaaax0815/github-insights/releases/tag/v1.1.3) · [Compare](https://github.com/kaaax0815/github-insights/compare/v1.1.2...v1.1.3) · [Tag](https://github.com/kaaax0815/github-insights/tree/v1.1.3) · Archive ([zip](https://github.com/kaaax0815/github-insights/archive/v1.1.3.zip) · [tar.gz](https://github.com/kaaax0815/github-insights/archive/v1.1.3.tar.gz))
